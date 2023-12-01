@@ -8905,6 +8905,8 @@ pub mod qdrant_internal_client {
             self.inner = self.inner.max_encoding_message_size(limit);
             self
         }
+        ///
+        /// Get current commit and term on the target node.
         pub async fn get_commit_index(
             &mut self,
             request: impl tonic::IntoRequest<super::GetCommitIndexRequest>,
@@ -8968,6 +8970,8 @@ pub mod qdrant_internal_server {
     /// Generated trait containing gRPC methods that should be implemented for use with QdrantInternalServer.
     #[async_trait]
     pub trait QdrantInternal: Send + Sync + 'static {
+        ///
+        /// Get current commit and term on the target node.
         async fn get_commit_index(
             &self,
             request: tonic::Request<super::GetCommitIndexRequest>,
